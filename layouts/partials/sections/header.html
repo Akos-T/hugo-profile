@@ -3,6 +3,43 @@
     let localStorageValue = localStorage.getItem("pref-theme");
     let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+    window.onload = (event) => {
+        light_logos = document.getElementsByClassName('logo_light')
+        dark_logos = document.getElementsByClassName('logo_dark')
+
+        switch (localStorageValue) {
+            case "dark":
+                Array.from(light_logos).forEach(light_logo => {
+                    light_logo.style.display = 'inline'
+                });
+
+                Array.from(dark_logos).forEach(dark_logo => {
+                    dark_logo.style.display = 'none'
+                })
+                break;
+            case "light":
+                Array.from(light_logos).forEach(light_logo => {
+                    light_logo.style.display = 'none'
+                });
+
+                Array.from(dark_logos).forEach(dark_logo => {
+                    dark_logo.style.display = 'inline'
+                })
+                break;
+            default:
+                if (mediaQuery) {
+                    Array.from(light_logos).forEach(light_logo => {
+                        light_logo.style.display = 'inline'
+                    });
+
+                    Array.from(dark_logos).forEach(dark_logo => {
+                        dark_logo.style.display = 'none'
+                    })
+                }
+                break;
+        }
+    }
+
     switch (localStorageValue) {
         case "dark":
             document.body.classList.add('dark');
@@ -26,7 +63,9 @@
             <!-- navbar brand -->
             <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
                 {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) .Site.Params.navbar.showBrandLogo | default true }}
-                <img src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}" width="30" height="30"
+                <img class="logo_light" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon_light }}" width="30" height="30"
+                    class="d-inline-block align-top">
+                <img class="logo_dark" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon_dark }}" width="30" height="30"
                     class="d-inline-block align-top">
                 {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
                 {{ else }}
