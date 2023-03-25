@@ -10,15 +10,6 @@
         switch (localStorageValue) {
             case "dark":
                 Array.from(light_logos).forEach(light_logo => {
-                    light_logo.style.display = 'inline'
-                });
-
-                Array.from(dark_logos).forEach(dark_logo => {
-                    dark_logo.style.display = 'none'
-                })
-                break;
-            case "light":
-                Array.from(light_logos).forEach(light_logo => {
                     light_logo.style.display = 'none'
                 });
 
@@ -26,14 +17,23 @@
                     dark_logo.style.display = 'inline'
                 })
                 break;
+            case "light":
+                Array.from(light_logos).forEach(light_logo => {
+                    light_logo.style.display = 'inline'
+                });
+
+                Array.from(dark_logos).forEach(dark_logo => {
+                    dark_logo.style.display = 'none'
+                })
+                break;
             default:
                 if (mediaQuery) {
                     Array.from(light_logos).forEach(light_logo => {
-                        light_logo.style.display = 'inline'
+                        light_logo.style.display = 'none'
                     });
 
                     Array.from(dark_logos).forEach(dark_logo => {
-                        dark_logo.style.display = 'none'
+                        dark_logo.style.display = 'inline'
                     })
                 }
                 break;
