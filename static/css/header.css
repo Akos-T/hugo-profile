@@ -3,6 +3,22 @@ header {
     position: relative;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+#navigationbar {
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+.sticky + #content {
+    padding-top: 80px;
+}
+
 header .navbar .navbar-nav a {
     color: var(--text-color) !important;
 }
@@ -17,29 +33,39 @@ header .navbar .navbar-nav a {
     outline: none;
     color: var(--text-color);
 }
+
 .navbar-toggler svg {
     fill: currentColor;
     color: var(--text-color);
 }
+
 .navbar-toggler:focus {
     box-shadow: 0 0 0 .05em;
 }
+
 .navbar-text {
     font-size: 16px !important;
     opacity: 0.95;
 }
-header .nav-link{
+
+header .nav-link {
     transition: none !important;
 }
+
 .navbar-brand {
-    color: var(--primary-color) !important;
+    color: var(--text-color) !important;
     opacity: 0.95;
 } 
+
+.navbar-brand:hover {
+    color: var(--primary-color) !important;
+}
+
 .navbar .nav-link:hover {
     color: var(--primary-color) !important;
 }
 
-li > .dropdown-toggle:focus{
+li > .dropdown-toggle:focus {
     color: var(--primary-color) !important;
 }
 
@@ -69,6 +95,7 @@ li > .dropdown-toggle:focus{
 #search:focus {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 #search-content {
     -ms-scroll-chaining: none;
     scrollbar-width: none;

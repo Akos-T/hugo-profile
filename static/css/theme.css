@@ -1,6 +1,6 @@
 /* light mode */
 .light > *{
-    background-color: var(--background-color) !important;
+    /* background-color: var(--background-color) !important; */
     color: var(--text-color) !important;
 }
 
@@ -10,8 +10,11 @@
     --secondary-background-color: var(--secondary-background-color-dark) !important;
     --text-color: var(--text-color-dark) !important;
     --text-secondary-color: var(--text-secondary-color-dark) !important;
+    --text-highlight-color: var(--text-highlight-color-dark) !important;
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
+    --link-color: var(--link-color-dark);    
+    background-color: var(--background-color-dark);
 }
 
 .text-secondary {

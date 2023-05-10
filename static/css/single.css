@@ -28,7 +28,7 @@
 #single .page-content a {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: var(--link-color) !important;
 }
 
 #single .page-content a::after {
@@ -37,7 +37,7 @@
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: var(--link-color);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     opacity: 0.5;
 }
@@ -257,7 +257,7 @@
 
 #single aside.social .social-content ul li:hover a {
     opacity: .8;
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 /* Top scroll */

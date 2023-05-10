@@ -55,6 +55,37 @@ header .navbar.animate {
     animation: fade-up 0.5s ease-in;
 }
 
+.container {
+    padding-top: 80px;
+}
+
+.a-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--link-color) !important;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.8;
+}
+
+.a-link:hover, .a-link:active, .a-link:focus {
+    opacity: 1;
+}
+
+.a-link::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 2px;
+    bottom: 0.37em;
+    background-color: var(--link-color);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.6;
+}
+
+.a-link:hover::after, .a-link:focus::after, .a-link:active::after {
+    opacity: 1;
+    width: 100%;
+}
 
 /* ToolTip */
 
@@ -100,7 +131,7 @@ header .navbar.animate {
 #hero h3 {
     font-size: clamp(40px, 8vw, 60px);
     /* color: var(--primary-color) !important; */
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #hero p {
@@ -133,7 +164,9 @@ header .navbar.animate {
 
 #hero a.btn.social-icon {
     color: var(--primary-color) !important;
-    line-height: 0%;
+    height: 3em;
+    width: 3em;
+    line-height: normal;
     border-radius: 50%;
     margin-top: 50px;
     padding: 0.7rem;
@@ -177,6 +210,12 @@ header .navbar.animate {
     display: inline-block;
     text-decoration: none;
     color: var(--link-color) !important;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.8;
+}
+
+#hero .hero-content > a:hover, #hero .hero-content > a:active, #hero .hero-content > a:focus {
+    opacity: 1;
 }
 
 #hero .hero-content > a::after {
@@ -187,11 +226,12 @@ header .navbar.animate {
     bottom: 0.37em;
     background-color: var(--link-color);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #hero .hero-content > a:hover::after, #hero .hero-content > a:focus::after, #hero .hero-content > a:active::after {
     width: 100%;
+    opacity: 1;
 }
 
 
@@ -244,7 +284,12 @@ header .navbar.animate {
 #about a {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: var(--link-color) !important;
+    opacity: 0.8;
+}
+
+#about a:hover, #about a:focus, #about a:active {
+    opacity: 1;
 }
 
 #about a::after {
@@ -253,13 +298,14 @@ header .navbar.animate {
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: var(--link-color);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #about a:hover::after, #about a:focus::after, #about a:active::after {
     width: 100%;
+    opacity: 1;
 }
 
 /* experience */

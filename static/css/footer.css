@@ -2,9 +2,38 @@ footer a h5 {
     color: var(--text-color) !important;
 }
 
+.a-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--link-color) !important;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.8;
+}
+
+.a-link:hover, .a-link:active, .a-link:focus {
+    color: var(--link-color) !important;
+    opacity: 1;
+}
+
+.a-link::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 2px;
+    bottom: 0.37em;
+    background-color: var(--link-color);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.6;
+}
+
+.a-link:hover::after, .a-link:focus::after, .a-link:active::after {
+    opacity: 0.9;
+    width: 100%;
+}
+
 footer a {
   text-decoration: none;
-  color: var(--text-secondary-color) !important;
+  color: var(--link-color) !important;
 }
 
 footer a:hover {
