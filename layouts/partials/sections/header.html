@@ -86,8 +86,8 @@
             <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}#content">
                 {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) .Site.Params.navbar.showBrandLogo
                 | default true }}
-                <img class="logo_light" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon_light }}"
-                    width="30" height="30" class="d-inline-block align-top">
+                <!-- <img class="logo_light" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon_light }}"
+                    width="30" height="30" class="d-inline-block align-top"> -->
                 <img class="logo_dark" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon_dark }}"
                     width="30" height="30" class="d-inline-block align-top">
                 {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
