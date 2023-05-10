@@ -13,6 +13,16 @@
             <div class="col-sm-12 col-md-12 col-lg-8 content">
                 {{ .Site.Params.about.content | markdownify }}
 
+                {{ if .Site.Params.about.softSkills.enable }}
+                {{ .Site.Params.about.softSkills.title }}
+                <ul>
+                    {{ range .Site.Params.about.softSkills.items }}
+                    <li>{{ . | markdownify }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+                <br />
+
                 {{ if .Site.Params.about.skills.enable }}
                 {{ .Site.Params.about.skills.title }}
                 <ul>
