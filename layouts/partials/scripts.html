@@ -109,3 +109,23 @@
 {{ if (.Site.Params.contact.formspree.enable | default false) }}
 <script src="{{ .Site.Params.staticPath }}/js/contact.js"></script>
 {{ end }}
+
+<script>
+    navItems = document.getElementsByClassName("nav-link")
+    for (let navItem of navItems) {
+        navItem.addEventListener("click", (e) => {
+            navbarContent = document.getElementById("navbarContent")
+            if (navbarContent.classList.contains("show")){
+                navbarContent.classList.remove("show")
+            }
+        })
+    }
+
+    navbarBrand = document.getElementsByClassName("navbar-brand")[0]
+    navbarBrand.addEventListener("click", (e) => {
+        navbarContent = document.getElementById("navbarContent")
+        if (navbarContent.classList.contains("show")){
+            navbarContent.classList.remove("show")
+        }
+    })
+</script>
