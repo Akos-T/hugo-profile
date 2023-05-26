@@ -433,6 +433,10 @@ header .navbar.animate {
 
 /* Education */
 
+#education {
+    scroll-margin-top: 90px;
+}
+
 #education .container > h3 {
     color: var(--text-secondary-color) !important;
 }
