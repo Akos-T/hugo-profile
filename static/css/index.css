@@ -585,6 +585,7 @@ header .navbar.animate {
     border-color: var(--primary-color) !important;
     background-color: var(--secondary-color) !important;
     color: var(--text-color) !important;
+    padding: .7rem, 1.75rem;
 }
 
 #contact .btn:hover {
