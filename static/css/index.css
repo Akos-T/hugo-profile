@@ -491,7 +491,13 @@ header .navbar.animate {
 #education .card .card-body > a h6 {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: var(--link-color) !important;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0.8;
+}
+
+#education .card .card-body > a h6:hover, #education .card .card-body > a h6:focus, #education .card .card-body > a h6:active {
+    opacity: 1;
 }
 
 #education .card .card-body > a h6::after {
@@ -500,13 +506,14 @@ header .navbar.animate {
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: var(--link-color);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #education .card .card-body > a h6:hover::after, #education .card .card-body > a h6:focus::after, #education .card .card-body > a h6:active::after {
     width: 100%;
+    opacity: 1;
 }
 
 #education .card .card-body a.btn {
