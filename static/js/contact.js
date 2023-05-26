@@ -41,5 +41,5 @@ function contactAlert(type, message) {
   // Remove alert after 3 seconds
   setTimeout(function () {
     contactFormStatus.innerHTML = "";
-  }, 3000);
+  }, 5000);
 }
