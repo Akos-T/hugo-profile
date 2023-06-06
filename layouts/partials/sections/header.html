@@ -17,32 +17,6 @@
         // Init notification
         initNotification()
 
-        // Button handler for closing the notification
-        function closeNotification() {
-            let notificationShown = sessionStorage.getItem("notification-shown");
-            
-
-            if (notificationShown === "true") {
-                notification = document.getElementById("notification")
-                notification.classList.remove("notification-banner")
-                sessionStorage.setItem("notification-shown", 'false')
-            }
-        }
-
-        // Init function that checks "notification-shown"'s value in local storage and
-        // if true: show notification
-        // if false: hide notification
-        function initNotification() {
-            let notificationShown = sessionStorage.getItem("notification-shown")
-            notification = document.getElementById("notification")
-
-            if (notificationShown === "true") {
-                notification.classList.add("notification-banner")
-            } else {
-                notification.classList.remove("notification-banner")
-            }
-        }
-
         light_logos = document.getElementsByClassName('logo_light')
         dark_logos = document.getElementsByClassName('logo_dark')
 
@@ -111,12 +85,38 @@
             }
             break;
     }
+
+    // Button handler for closing the notification
+    function closeNotification() {
+        let notificationShown = sessionStorage.getItem("notification-shown");
+
+
+        if (notificationShown === "true") {
+            notification = document.getElementById("notification")
+            notification.classList.remove("notification-banner")
+            sessionStorage.setItem("notification-shown", 'false')
+        }
+    }
+
+    // Init function that checks "notification-shown"'s value in local storage and
+    // if true: show notification
+    // if false: hide notification
+    function initNotification() {
+        let notificationShown = sessionStorage.getItem("notification-shown")
+        notification = document.getElementById("notification")
+
+        if (notificationShown === "true") {
+            notification.classList.add("notification-banner")
+        } else {
+            notification.classList.remove("notification-banner")
+        }
+    }
 </script>
 
 
 <!-- Navbar -->
 <header id="navigationbar">
-    
+
     {{ if (.Site.Params.notification.enable) | default false }}
     <div id="notification" style="display:none;">
         <p class="notification-text">
