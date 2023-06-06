@@ -7,6 +7,42 @@
     let navbar;
 
     window.onload = (event) => {
+        // Init notification-shown in local storage
+        let notificationShown = sessionStorage.getItem("notification-shown");
+        if (notificationShown === 'undefined' || notificationShown === null) {
+            sessionStorage.setItem("notification-shown", 'true')
+            notificationShown = true
+        }
+
+        // Init notification
+        initNotification()
+
+        // Button handler for closing the notification
+        function closeNotification() {
+            let notificationShown = sessionStorage.getItem("notification-shown");
+            
+
+            if (notificationShown === "true") {
+                notification = document.getElementById("notification")
+                notification.classList.remove("notification-banner")
+                sessionStorage.setItem("notification-shown", 'false')
+            }
+        }
+
+        // Init function that checks "notification-shown"'s value in local storage and
+        // if true: show notification
+        // if false: hide notification
+        function initNotification() {
+            let notificationShown = sessionStorage.getItem("notification-shown")
+            notification = document.getElementById("notification")
+
+            if (notificationShown === "true") {
+                notification.classList.add("notification-banner")
+            } else {
+                notification.classList.remove("notification-banner")
+            }
+        }
+
         light_logos = document.getElementsByClassName('logo_light')
         dark_logos = document.getElementsByClassName('logo_dark')
 
@@ -48,12 +84,12 @@
         // Get the offset position of the navbar
         sticky = navbar.offsetTop;
 
-        // When the user scrolls the page, execute myFunction
-        window.onscroll = (event) => myFunction();
-        myFunction();   // Init
+        // When the user scrolls the page, execute toggleSticky
+        window.onscroll = (event) => toggleSticky();
+        toggleSticky();   // Init
 
         // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function myFunction() {
+        function toggleSticky() {
             if (window.pageYOffset > sticky) {
                 navbar.classList.add("sticky")
             } else {
@@ -80,6 +116,18 @@
 
 <!-- Navbar -->
 <header id="navigationbar">
+    
+    {{ if (.Site.Params.notification.enable) | default false }}
+    <div id="notification" style="display:none;">
+        <p class="notification-text">
+            {{ .Site.Params.notification.content}}
+        </p>
+        <button onclick="closeNotification()" class="notification-closer">
+            X
+        </button>
+    </div>
+    {{ end }}
+
     <nav class="pt-3 navbar navbar-expand-md {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->

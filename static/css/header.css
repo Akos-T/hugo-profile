@@ -3,6 +3,34 @@ header {
     position: relative;
 }
 
+.notification-banner {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: gold;
+    text-align: left;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+.notification-text {
+    display: inline-block;
+    text-align: justify;
+    color: black;
+    margin-bottom: 0;
+    padding: 1rem;
+    
+}
+
+.notification-closer {
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    padding: 1rem;
+}
+
 .sticky {
     position: sticky;
     top: 0;

@@ -603,6 +603,10 @@ header .navbar.animate {
 
 /* contact */
 
+#contact {
+    scroll-margin-top: 90px;
+}
+
 #contact h3 {
     color: var(--text-secondary-color) !important;
 }
