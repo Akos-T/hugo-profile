@@ -15,10 +15,10 @@
         <div class="col-lg-4 col-md-6 my-3">
             <div class="card-columns">
                 <div class="card h-100">
-                    {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
+                    {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.thumbnail) }}
                     <div class="card-header">
                         <a href="{{ .RelPermalink }}">
-                            <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
+                            <img src="{{ .Params.thumbnail }}" class="card-img-top" alt="{{ .Title }}">
                         </a>
                     </div>
                     {{ end }}
