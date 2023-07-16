@@ -161,6 +161,10 @@
   top: 50px;
 }
 
+article.page-content h2{
+    scroll-margin-top: 90px;
+}
+
 /* Tags */
 #single aside.tags h5 {
     margin: .7em 0;
